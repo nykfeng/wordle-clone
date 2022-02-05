@@ -1,6 +1,8 @@
 const keyStr = "QWERTYUIOPASDFGHJKLZXCVBNM";
 const keyInd = keyStr.split("");
 
+export const word = "SUPER";
+
 export const keyboard = [
   "Q",
   "W",
@@ -12,6 +14,7 @@ export const keyboard = [
   "I",
   "O",
   "P",
+
   "A",
   "S",
   "D",
@@ -21,6 +24,7 @@ export const keyboard = [
   "J",
   "K",
   "L",
+  "<<",
   "Z",
   "X",
   "C",
@@ -28,7 +32,7 @@ export const keyboard = [
   "B",
   "N",
   "M",
-  "<<",
+
   "ENTER",
 ];
 

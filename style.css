@@ -29,6 +29,11 @@ body {
   justify-content: space-between;
   gap: 5rem;
   max-width: 120rem;
+  padding: 3rem 0rem;
+}
+
+.title {
+  font-size: 5rem;
 }
 
 #keyboard-container {
@@ -93,6 +98,23 @@ button.key {
 
 .yellow-out {
   background-color: #ecd662;
+}
+
+/* Slightly enlarging the cell after input */
+@keyframes enlarge {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.enlarge {
+  animation: enlarge 500ms ease-in;
 }
 
 /* Flipping animation */

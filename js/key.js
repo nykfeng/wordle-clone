@@ -14,7 +14,6 @@ export const keyboard = [
   "I",
   "O",
   "P",
-
   "A",
   "S",
   "D",
@@ -32,7 +31,6 @@ export const keyboard = [
   "B",
   "N",
   "M",
-
   "ENTER",
 ];
 

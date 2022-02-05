@@ -15,7 +15,7 @@ let isCurrentRowOver = false;
 
 // handler for key being pressed
 const keyboardHandler = function (key) {
-  if (key === "<<" || key === "BACKSPACE") {
+  if (key === "<<") {
     if (!isCurrentRowOver) {
       removeLetter();
     }
@@ -30,7 +30,12 @@ const keyboardHandler = function (key) {
 
 // Listen for keyboard typing event
 window.addEventListener("keydown", function (e) {
-  keyboardHandler(e.key.toUpperCase());
+  let keyPressed = e.key.toUpperCase();
+
+  if (keyPressed === "BACKSPACE") keyPressed = "<<";
+  if (keyboard.includes(keyPressed)) {
+    keyboardHandler(keyPressed);
+  }
 });
 
 // creating key elements
@@ -74,6 +79,7 @@ const addLetter = function (key) {
     const cellEl = document.querySelector(
       `#row-${currentRow}-cell-${currentCell}`
     );
+    cellEl.classList.add("enlarge");
     cellEl.textContent = key;
     gameRows[currentRow][currentCell] = key;
     currentCell++;
@@ -88,6 +94,7 @@ const removeLetter = function () {
       `#row-${currentRow}-cell-${currentCell}`
     );
     cellEl.textContent = "";
+    cellEl.classList.remove("enlarge");
   }
 };
 
@@ -101,12 +108,12 @@ const validateRow = function () {
 
     if (guessRow === word) {
       displayMessage("Impressive");
-      isGameOver = true;
+      // isGameOver = true;
       return;
     } else {
       // handle when all the rows have guessed
       if (currentRow >= 5) {
-        isGameOver = true;
+        // isGameOver = true;
         displayMessage("Game Over!");
         return;
       }

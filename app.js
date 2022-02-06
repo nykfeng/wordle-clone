@@ -1,5 +1,5 @@
-import { keyboard } from "./js/key.js";
-import { word } from "./js/key.js";
+import { keyboard } from "./js/utilities.js";
+import { word } from "./js/utilities.js";
 
 const msgEl = document.querySelector("#message-container");
 const gameEL = document.querySelector("#game-container");
@@ -30,11 +30,15 @@ const keyboardHandler = function (key) {
 
 // Listen for keyboard typing event
 window.addEventListener("keydown", function (e) {
-  let keyPressed = e.key.toUpperCase();
+  // if there was problem getting the word, keyboard event should not execute
+  if (word != null) {
+    // console.log("word " + word);
+    let keyPressed = e.key.toUpperCase();
 
-  if (keyPressed === "BACKSPACE") keyPressed = "<<";
-  if (keyboard.includes(keyPressed)) {
-    keyboardHandler(keyPressed);
+    if (keyPressed === "BACKSPACE") keyPressed = "<<";
+    if (keyboard.includes(keyPressed)) {
+      keyboardHandler(keyPressed);
+    }
   }
 });
 
@@ -108,12 +112,11 @@ const validateRow = function () {
 
     if (guessRow === word) {
       displayMessage("Impressive");
-      // isGameOver = true;
       return;
     } else {
       // handle when all the rows have guessed
       if (currentRow >= 5) {
-        // isGameOver = true;
+        displayWordle();
         displayMessage("Game Over!");
         return;
       }
@@ -142,6 +145,17 @@ const displayMessage = function (msg) {
   setTimeout(() => {
     h1el.remove();
   }, 4000);
+};
+
+// Display the word after all attempts were used
+const displayWordle = function () {
+  const h1el = document.createElement("h1");
+  h1el.textContent = word;
+  h1el.className = "flash wordle";
+
+  setTimeout(() => {
+    msgEl.append(h1el);
+  }, 2000);
 };
 
 // Applying color to the cell when it meets the criteria

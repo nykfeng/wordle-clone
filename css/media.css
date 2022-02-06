@@ -16,7 +16,7 @@
   }
 }
 
-@media only screen and (max-width: 393px) {
+@media only screen and (max-width: 420px) {
   :root {
     font-size: 40%;
   }

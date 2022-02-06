@@ -87,6 +87,11 @@ button.key {
   font-size: 3rem;
 }
 
+.wordle {
+  background-color: #66c02d;
+  color: #fff;
+}
+
 /* Color for the cells */
 .gray-out {
   background-color: #929292;

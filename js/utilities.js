@@ -1,7 +1,7 @@
-const keyStr = "QWERTYUIOPASDFGHJKLZXCVBNM";
-const keyInd = keyStr.split("");
+import getWord from "./getWord.js";
 
-export const word = "SUPER";
+const wordle = await getWord.wordle();
+export const word = wordle;
 
 export const keyboard = [
   "Q",
@@ -33,5 +33,3 @@ export const keyboard = [
   "M",
   "ENTER",
 ];
-
-console.log(keyInd);

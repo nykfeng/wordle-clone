@@ -6,7 +6,7 @@ const options = {
   params: { wordLength: "5" },
   headers: {
     "x-rapidapi-host": "random-words5.p.rapidapi.com",
-    "x-rapidapi-key": "49cb30a0f0msh06f941a3eb3e31cp18d12bjsn3c0565ac595d",
+    "x-rapidapi-key": "",
   },
 };
 

@@ -9,31 +9,26 @@
 :root {
   font-size: 62.5%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-  --primary-dark-color: #191a19;
-  --secondary-dark-color: #2e4c6d;
-  --main-color: #099e58;
-  --secondary-color: #16e7dd;
-  --green-price-color: #66f115;
-  --primary-gray-color: #f7f7f7;
-  --secondary-gray-color: #a09e9e;
 }
 
 body {
-  padding: 1rem;
   height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   gap: 5rem;
   max-width: 120rem;
-  padding: 3rem 0rem;
+  /* padding: 3rem 0rem; */
 }
 
 .title {
   font-size: 5rem;
+}
+
+#game-container {
+  margin-bottom: 5rem;
 }
 
 #keyboard-container {
@@ -41,7 +36,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .key {
@@ -50,8 +50,8 @@ body {
 
 button.key {
   font-family: monospace;
-  font-size: 3.5rem;
-  padding: 0.5em 0.75em;
+  font-size: 3rem;
+  padding: 0.3em 0.55em;
   cursor: pointer;
 }
 
@@ -83,7 +83,8 @@ button.key {
 
   padding: 1rem 1.3rem;
 
-  transform: translateX(-50%);
+  transform: translate(-50%, -30%);
+
   font-size: 3rem;
 }
 

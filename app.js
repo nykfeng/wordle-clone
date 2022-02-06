@@ -4,6 +4,9 @@ import { word } from "./js/utilities.js";
 const msgEl = document.querySelector("#message-container");
 const gameEL = document.querySelector("#game-container");
 const keyboardEl = document.querySelector("#keyboard-container");
+let keyboardRow1El;
+let keyboardRow2El;
+let keyboardRow3El;
 
 // starting position of the word table
 let currentRow = 0;
@@ -43,14 +46,45 @@ window.addEventListener("keydown", function (e) {
 });
 
 // creating key elements
-keyboard.forEach((key) => {
+// keyboard.forEach((key) => {
+//   const keyEl = document.createElement("button");
+//   keyEl.addEventListener("click", () => keyboardHandler(key));
+
+//   keyEl.setAttribute("id", `${key}-key`);
+//   keyEl.className = "key";
+//   keyEl.textContent = key;
+//   keyboardEl.append(keyEl);
+// });
+
+keyboard.forEach((key, index) => {
   const keyEl = document.createElement("button");
   keyEl.addEventListener("click", () => keyboardHandler(key));
-
   keyEl.setAttribute("id", `${key}-key`);
   keyEl.className = "key";
   keyEl.textContent = key;
-  keyboardEl.append(keyEl);
+
+  if (index < 10) {
+    if (!keyboardRow1El) {
+      keyboardRow1El = document.createElement("div");
+      keyboardRow1El.className = 'keyboard-row';
+      keyboardEl.append(keyboardRow1El);
+    }
+    keyboardRow1El.append(keyEl);
+  } else if (index >= 10 && index < 20) {
+    if (!keyboardRow2El) {
+      keyboardRow2El = document.createElement("div");
+      keyboardRow2El.className = 'keyboard-row';
+      keyboardEl.append(keyboardRow2El);
+    }
+    keyboardRow2El.append(keyEl);
+  } else {
+    if (!keyboardRow3El) {
+      keyboardRow3El = document.createElement("div");
+      keyboardRow3El.className = 'keyboard-row';
+      keyboardEl.append(keyboardRow3El);
+    }
+    keyboardRow3El.append(keyEl);
+  }
 });
 
 // the guess word table grid

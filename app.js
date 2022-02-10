@@ -46,16 +46,6 @@ window.addEventListener("keydown", function (e) {
 });
 
 // creating key elements
-// keyboard.forEach((key) => {
-//   const keyEl = document.createElement("button");
-//   keyEl.addEventListener("click", () => keyboardHandler(key));
-
-//   keyEl.setAttribute("id", `${key}-key`);
-//   keyEl.className = "key";
-//   keyEl.textContent = key;
-//   keyboardEl.append(keyEl);
-// });
-
 keyboard.forEach((key, index) => {
   const keyEl = document.createElement("button");
   keyEl.addEventListener("click", () => keyboardHandler(key));

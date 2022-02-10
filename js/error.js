@@ -15,7 +15,7 @@ const render = function () {
         </div>
       </div>
       `;
-  const errorModal = document.querySelector(".confirm_dialog-background");
+  const errorModal = document.querySelector(".error-background");
   if (!errorModal) {
     document.querySelector("body").insertAdjacentHTML("beforeend", html);
   }
